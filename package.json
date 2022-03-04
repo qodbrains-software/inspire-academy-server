@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/qodbrains-software/inspire-academy-server#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "express-zip": "^3.0.0"
   }
 }
