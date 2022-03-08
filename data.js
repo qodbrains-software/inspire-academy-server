@@ -19,4 +19,6 @@ let
   } 
  ];
 
-module.exports = {data};
+module.exports = {
+  data
+};
