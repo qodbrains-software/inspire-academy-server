@@ -1,6 +1,6 @@
 // when buying store a unqiue id for the user in the database. 
 
-module.exports = {
+export const users = {
    
     users: [
         { id: 1 },

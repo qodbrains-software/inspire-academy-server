@@ -2,6 +2,7 @@
   "name": "inspire-academy-server",
   "version": "1.0.0",
   "description": "This is a repository for the inspire academy server.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
@@ -19,8 +20,13 @@
   },
   "homepage": "https://github.com/qodbrains-software/inspire-academy-server#readme",
   "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.1.1",
     "express": "^4.17.3",
     "express-zip": "^3.0.0",
-    "nodemon": "^2.0.15"
+    "knex": "^1.0.4",
+    "node-fetch": "^3.2.0",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3"
   }
 }

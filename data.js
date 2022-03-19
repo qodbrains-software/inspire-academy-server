@@ -1,5 +1,4 @@
-let
- data = [
+export const data = [
   {
     "maths": [
       { "lesson": "Patterns, Sequences and Series" },
@@ -18,7 +17,3 @@ let
     ]
   } 
  ];
-
-module.exports = {
-  data
-};
