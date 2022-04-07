@@ -125,8 +125,8 @@ server.get("/buy/:itemId", (req, res) => {
   } else {
     const signature = CryptoJS.MD5(
       generateURIString({
-        merchant_id: "14834204",
-        merchant_key: "kiwb7uemq84pg",
+        merchant_id: "19505992",
+        merchant_key: "n1rmf511howy6",
         amount: product.price,
         item_name: product.name,
       })
@@ -143,8 +143,8 @@ server.get("/buy/:itemId", (req, res) => {
       body: JSON.stringify({
         amount: product.price,
         item_name: product.name,
-        merchant_key: "kiwb7uemq84pg",
-        merchant_id: 14834204,
+        merchant_key: "n1rmf511howy6",
+        merchant_id: 19505992,
       }),
       redirect: "follow",
     };
