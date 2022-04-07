@@ -1,14 +1,12 @@
-// const zip = require("express-zip"); I commented this out because it doesn't seem to be in use YET.
 import express from "express";
 import { data } from "./data.js";
-import { users } from "./database.js";
-import { authUser } from "./basicAuth.js";
 import { Headers } from "node-fetch";
 import fetch from "node-fetch";
 import CryptoJS from "crypto-js";
 import knex from "knex";
 import { products } from "./products-db.js";
 import cors from 'cors';
+
 
 const server = express();
 
@@ -27,9 +25,11 @@ const db = knex({
   },
 });
 
+
 server.use(express.json());
-server.use(setUser);
 server.use(cors());
+
+//LESSONS ENDPOINT START
 
 server.get("/lessons/maths", (req, res) => {
   //return the list of maths lessons
@@ -43,24 +43,7 @@ server.get("/lessons/accounting", (req, res) => {
   res.json(data[1].accounting);
 });
 
-server.get("/download", authUser, (req, res) => {
-  //downloads the book.
-  res.zip([
-    {
-      path: "1.pdf",
-      name: "1.pdf",
-    },
-  ]);
-});
-
-// setuser and check userId middleware
-function setUser(req, res, next) {
-  const userId = req.body.userId;
-  if (userId) {
-    req.user = users.find((user) => user.id === userId);
-  }
-  next();
-}
+//LESSONS ENDPOINT END;
 
 // SUBSCRIBE ENDPOINT START
 
