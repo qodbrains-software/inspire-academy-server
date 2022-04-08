@@ -6,6 +6,19 @@ import CryptoJS from "crypto-js";
 import knex from "knex";
 import { products } from "./products-db.js";
 import cors from 'cors';
+const { Client } = require('pg');
+
+
+
+// Database Connection Settings:
+const db = new Client({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false
+  }
+});
+
+db.connect();
 
 
 const server = express();
@@ -13,17 +26,16 @@ const server = express();
 // Constants:
 const port = 8080;
 
-// Database Connection Settings:
-const db = knex({
-  client: "pg",
-  connection: {
-    host: "127.0.0.1",
-    port: 5432,
-    user: "postgres",
-    password: "admin",
-    database: "inspire-academy",
-  },
-});
+// const db = knex({
+//   client: "pg",
+//   connection: {
+//     host: "127.0.0.1",
+//     port: 5432,
+//     user: "postgres",
+//     password: "admin",
+//     database: "inspire-academy",
+//   },
+// });
 
 
 server.use(express.json());
